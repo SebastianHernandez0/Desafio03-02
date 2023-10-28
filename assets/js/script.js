@@ -26,15 +26,14 @@ divsol=document.querySelector(".desafio-2__sol")
 
 inputValor1.addEventListener("input",function(){
     valor1=parseInt(this.value) 
-    console.log(valor1)
+    
 })
 inputValor2.addEventListener("input",function(){
     valor2= parseInt(this.value) 
-    console.log(valor2)
+    
 })
 inputValor3.addEventListener("input",function(){
     valor3= parseInt(this.value) 
-    console.log(valor3)
 })
 
 
@@ -46,7 +45,13 @@ btn.addEventListener("click",function(){
     res=valor1+valor2+valor3
     if(res<=10){
         parrafo=document.createElement("p")
-        restext=document.createTextNode(res)
+        restext=document.createTextNode("Llevas "+res+" Stickers")
+        parrafo.appendChild(restext)
+        divsol.appendChild(parrafo)
+    }
+    else{
+        parrafo=document.createElement("p")
+        restext=document.createTextNode("Llevas demasiados stickers")
         parrafo.appendChild(restext)
         divsol.appendChild(parrafo)
     }
@@ -54,4 +59,46 @@ btn.addEventListener("click",function(){
 })
 
 
+//Desafio 3
 
+select1= document.querySelector(".desafio3__select--1")
+select2= document.querySelector(".desafio3__select--2")
+select3= document.querySelector(".desafio3__select--3")
+btn3=document.querySelector(".desafio3__btn")
+divsol3=document.querySelector(".desafio3__sol")
+
+select1.addEventListener("change",function(){
+    S1=select1.value
+})
+select2.addEventListener("change",function(){
+    S2=select2.value
+})
+select3.addEventListener("change",function(){
+    S3=select3.value
+})
+
+
+
+btn3.addEventListener("click",function(){
+    resSelect=S1+S2+S3
+
+parr=document.createElement("p")
+
+    if (resSelect=="911") {
+        restext=document.createTextNode("Password 1 correcto")
+        parr.appendChild(restext)
+        divsol3.appendChild(parr)
+        
+    }
+    else if (resSelect=="714") {
+        restext=document.createTextNode("Password 2 correcto")
+        parr.appendChild(restext)
+        divsol3.appendChild(parr)
+        
+    } else {
+        restext=document.createTextNode("password incorrecto")
+        parr.appendChild(restext)
+        divsol3.appendChild(parr)
+        
+    }
+})
